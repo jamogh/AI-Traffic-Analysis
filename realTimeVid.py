@@ -10,7 +10,7 @@ engine = pyttsx3.init()
 engine.setProperty('rate', 150)  # Set speech speed
 
 # Load YOLOv5 model (pretrained)
-model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # Load YOLOv5s (lightweight)
+model = torch.hub.load('ultralytics/yolov5', 'yolov5s')  # Load YOLOv5s
 
 # Function for text-to-speech alerts
 def speak_alert(alert):
@@ -89,7 +89,7 @@ def handle_detection(label, bbox, image, confidence):
             tracked_alerts[object_id] = current_time
 
 # Load the input video
-video_path = "E:\AMJ PROJECTS\AI-Traffic-Analysis\ds5.mp4"  # Replace with the path to your input video
+video_path = "E:\AMJ PROJECTS\AI-Traffic-Analysis\ds3.mp4"  # Replace with the path to your input video
 cap = cv2.VideoCapture(video_path)
 
 # Specify the output folder
@@ -123,7 +123,7 @@ while cap.isOpened():
         confidence, label = row['confidence'], row['name']
 
         # Filter detections for specific objects with confidence > 0.5
-        if confidence > 0.5 and label in ['person', 'traffic light', 'pothole']:
+        if confidence > 0.6 and label in ['person', 'traffic light', 'pothole']:
             handle_detection(label, (x_min, y_min, x_max, y_max), frame, confidence)
 
     # Write the processed frame to the output video
