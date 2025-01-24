@@ -17,7 +17,7 @@ def speak_alert(alert):
 
 # Path to the dataset directory
 dataset_dir = r"E:\AMJ PROJECTS\AI-Traffic-Analysis\IDDMissingTSMiniTest\IDDMissingTSMiniTest\task1test"  # Replace with your folder path
-output_dir = r"E:\AMJ PROJECTS\AI-Traffic-Analysis\output"  # Directory to save output images
+output_dir = r"E:\AMJ PROJECTS\AI-Traffic-Analysis\output\testmini"  # Directory to save output images
 os.makedirs(output_dir, exist_ok=True)
 
 # Verify the dataset directory exists
